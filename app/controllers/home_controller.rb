@@ -3,4 +3,8 @@ class HomeController < ApplicationController
         # render 'home/index'
         @title = 'デイトラ'
     end
+
+    def about
+        render 'home/about'
+    end
 end
