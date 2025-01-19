@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   # get '/' => 'home#index'
   root to: 'articles#index' # 必ず使う
 
-  resources :articles, only: [:show, :new, :create, :edit, :update, :destroy]
+  resources :articles
 end
