@@ -27,7 +27,7 @@ class User < ApplicationRecord
   has_many :favorite_articles, through: :likes, source: :article
 
   has_many :following_relationshios, foreign_key: 'follower_id', class_name: 'Relationship', dependent: :destroy
-
+  has_many :followings, through: :following_relationshios, source: :following
 
   has_one :profile, dependent: :destroy
 
