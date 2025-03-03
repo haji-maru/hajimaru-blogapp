@@ -45,6 +45,10 @@ class User < ApplicationRecord
     profile&.nickname || self.email.split('@').first
   end
 
+  def follow!(user)
+    following_relationshios.create!(following_id: user.id)
+  end
+
   def prepare_profile
     profile || build_profile
   end
