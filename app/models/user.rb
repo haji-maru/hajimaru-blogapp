@@ -31,6 +31,7 @@ class User < ApplicationRecord
   has_many :followings, through: :following_relationshios, source: :following
   # フォロワーの関係
   has_many :following_relationshios, foreign_key: 'following_id', class_name: 'Relationship', dependent: :destroy
+  has_many :followers, through: :following_relationshios, source: :follower
 
   has_one :profile, dependent: :destroy
 
