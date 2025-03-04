@@ -64,6 +64,11 @@ class User < ApplicationRecord
     relation.destroy!
   end
 
+  # フォローしているか、していないかチェック
+  def has_followed?(user)
+    following_relationships.exists?(following_id: user.id)
+  end
+
   def prepare_profile
     profile || build_profile
   end
