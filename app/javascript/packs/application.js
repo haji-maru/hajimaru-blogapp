@@ -20,6 +20,9 @@ require("@rails/actiontext");
 
 import $ from "jquery";
 
+// console.log(); コンソール出力
+// debugger 処理を止める
+
 document.addEventListener("DOMContentLoaded", () => {
   $(".article_title").on("click", () => {
     window.alert("CLICKED");
