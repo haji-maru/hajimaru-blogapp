@@ -19,6 +19,7 @@ require("trix");
 require("@rails/actiontext");
 
 import $ from "jquery";
+import $ from "axios";
 
 // console.log(); コンソール出力
 // debugger 処理を止める
