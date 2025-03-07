@@ -25,7 +25,9 @@ import axios from "axios";
 // debugger 処理を止める
 
 document.addEventListener("turbolinks:load", () => {
-  axios.get(`/articles/1/like`).then((response) => {
+  const dataset = $("#article-show").data();
+  const articleId = dataset.articleId;
+  axios.get(`/articles/${articleId}/like`).then((response) => {
     console.log(response);
   });
 });
