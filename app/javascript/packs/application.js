@@ -55,4 +55,16 @@ document.addEventListener("turbolinks:load", () => {
         console.log(e);
       });
   });
+
+  $(".active-heart").on("click", () => {
+    axios
+      .delete(`/articles/${articleId}/like`)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((e) => {
+        window.alert("Error");
+        console.log(e);
+      });
+  });
 });
