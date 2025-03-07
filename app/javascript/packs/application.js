@@ -19,13 +19,15 @@ require("trix");
 require("@rails/actiontext");
 
 import $ from "jquery";
-import $ from "axios";
+import axios from "axios";
 
 // console.log(); コンソール出力
 // debugger 処理を止める
 
 document.addEventListener("DOMContentLoaded", () => {
   $(".article_title").on("click", () => {
-    window.alert("CLICKED");
+    axios.get("/").then((response) => {
+      console.log(response);
+    });
   });
 });
