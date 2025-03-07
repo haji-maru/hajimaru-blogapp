@@ -24,4 +24,8 @@ import axios from "axios";
 // console.log(); コンソール出力
 // debugger 処理を止める
 
-document.addEventListener("turbolinks:load", () => {});
+document.addEventListener("turbolinks:load", () => {
+  axios.get(`/articles/1/like`).then((response) => {
+    console.log(response);
+  });
+});
