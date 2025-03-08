@@ -5,6 +5,10 @@ class CommentsController < ApplicationController
     @comment = article.comments.build
   end
 
+  def index
+    
+  end
+
   def create
     article = Article.find(params[:article_id])
     @comment = article.comments.build(comment_params)
