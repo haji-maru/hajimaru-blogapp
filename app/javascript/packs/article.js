@@ -34,12 +34,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const articleId = dataset.articleId;
 
   // コメント一覧
-  axios.get(`/articles/${articleId}/comments`).then((response) => {
-    const comments = response.data;
-    comments.forEach((comment) => {
-      appendNewComment(comment);
+  axios
+    .get(`/articles/${articleId}/comments`)
+    .then((response) => {
+      const comments = response.data;
+      comments.forEach((comment) => {
+        appendNewComment(comment);
+      });
+    })
+    .catch((error) => {
+      window.alert("失敗しました");
     });
-  });
 
   // フォーム切替
   handleCommentForm();
