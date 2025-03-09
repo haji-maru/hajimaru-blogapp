@@ -1,9 +1,6 @@
 import $ from "jquery";
-import axios from "axios";
-import { csrfToken } from "rails-ujs";
+import axios from "modules/axios";
 import { listenInactiveHeartEvent, listenActiveHeartEvent } from "modules/handle_heart";
-
-axios.defaults.headers.common["X-CSRF-Token"] = csrfToken();
 
 // console.log(); コンソール出力
 // debugger 処理を止める
