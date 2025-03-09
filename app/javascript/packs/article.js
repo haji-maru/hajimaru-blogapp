@@ -15,6 +15,14 @@ const handleHeartDisplay = (hasLiked) => {
   }
 };
 
+const handleCommentForm = () => {
+  // フォーム切替
+  $(".show-comment-form").on("click", () => {
+    $(".show-comment-form").addClass("hidden");
+    $(".comment-text-area").removeClass("hidden");
+  });
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   const dataset = $("#article-show").data();
   const articleId = dataset.articleId;
@@ -30,10 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // フォーム切替
-  $(".show-comment-form").on("click", () => {
-    $(".show-comment-form").addClass("hidden");
-    $(".comment-text-area").removeClass("hidden");
-  });
+  handleCommentForm();
 
   // コメント追加
   $(".add-comment-button").on("click", () => {
