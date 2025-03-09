@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const dataset = $("#article-show").data();
   const articleId = dataset.articleId;
 
+  // コメント一覧
   axios.get(`/articles/${articleId}/comments`).then((response) => {
     const comments = response.data;
     comments.forEach((comment) => {
@@ -28,6 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // フォーム切替
+  $(".show-comment-form").on("click", () => {
+    $(".show-comment-form").addClass("hidden");
+    $(".comment-text-area").removeClass("hidden");
+  });
+
+  // いいねボタン切替
   axios.get(`/articles/${articleId}/like`).then((response) => {
     const hasLiked = response.data.hasLiked;
     handleHeartDisplay(hasLiked);
