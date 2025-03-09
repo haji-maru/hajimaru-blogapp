@@ -1,6 +1,7 @@
 import $ from "jquery";
 import axios from "axios";
 import { csrfToken } from "rails-ujs";
+import { listenInactiveHeartEvent, listenActiveHeartEvent } from "modules/handle_heart";
 
 axios.defaults.headers.common["X-CSRF-Token"] = csrfToken();
 
@@ -72,4 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const hasLiked = response.data.hasLiked;
     handleHeartDisplay(hasLiked);
   });
+  listenInactiveHeartEvent(articleId);
+  listenActiveHeartEvent(articleId);
 });
