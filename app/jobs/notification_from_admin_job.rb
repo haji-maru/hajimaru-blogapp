@@ -1,5 +1,5 @@
 class NotificationFromAdminJob < ApplicationJob
-  queue_us :default
+  queue_as :default
 
   # perform 必須
   def perform(msg)
