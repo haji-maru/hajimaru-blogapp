@@ -7,6 +7,7 @@ axios.defaults.headers.common["X-CSRF-Token"] = csrfToken();
 // console.log(); コンソール出力
 // debugger 処理を止める
 
+// いいねボタン切替
 const handleHeartDisplay = (hasLiked) => {
   if (hasLiked) {
     $(".active-heart").removeClass("hidden");
