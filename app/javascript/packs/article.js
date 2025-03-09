@@ -23,6 +23,11 @@ const handleCommentForm = () => {
   });
 };
 
+// コメント追加
+const appendNewComment = (comment) => {
+  $(".comments-container").append(`<div class="article_comment"><p>${comment.content}</p></div>`);
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   const dataset = $("#article-show").data();
   const articleId = dataset.articleId;
@@ -31,9 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
   axios.get(`/articles/${articleId}/comments`).then((response) => {
     const comments = response.data;
     comments.forEach((comment) => {
-      $(".comments-container").append(
-        `<div class="article_comment"><p>${comment.content}</p></div>`
-      );
+      appendNewComment(comment);
     });
   });
 
@@ -52,9 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .then((response) => {
           const comment = response.data;
-          $(".comments-container").append(
-            `<div class="article_comment"><p>${comment.content}</p></div>`
-          );
+          appendNewComment(comment);
         });
       $("#comment_content").val("");
     }
