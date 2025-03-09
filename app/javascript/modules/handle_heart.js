@@ -39,3 +39,8 @@ const listenActiveHeartEvent = (articleId) => {
       });
   });
 };
+
+export {
+  listenInactiveHeartEvent: listenInactiveHeartEvent,
+  listenActiveHeartEvent: listenActiveHeartEvent
+}
