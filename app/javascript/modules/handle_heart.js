@@ -40,7 +40,4 @@ const listenActiveHeartEvent = (articleId) => {
   });
 };
 
-export {
-  listenInactiveHeartEvent: listenInactiveHeartEvent,
-  listenActiveHeartEvent: listenActiveHeartEvent
-}
+export { listenInactiveHeartEvent, listenActiveHeartEvent };
