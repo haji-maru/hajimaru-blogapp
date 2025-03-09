@@ -35,6 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
     $(".comment-text-area").removeClass("hidden");
   });
 
+  // コメント追加
+  $(".add-comment-button").on("click", () => {
+    const content = $("comment_content").val();
+  });
+
   // いいねボタン切替
   axios.get(`/articles/${articleId}/like`).then((response) => {
     const hasLiked = response.data.hasLiked;
