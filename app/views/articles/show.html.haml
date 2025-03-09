@@ -29,8 +29,9 @@
   .comments-container
 
 .container
-  = link_to new_article_comment_path(@article) do
-    .btn-secondary
-      コメントを追加
+  .btn-secondary
+    コメントを追加
+  .comment-text-area
+    = text_area_tag :comment_content, '', class: 'sm'
 
 = javascript_pack_tag 'article'
