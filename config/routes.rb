@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   namespace :api, default: {format: :json} do
     scope '/articles/:article_id' do
-      resources :comments, only: [:index, :new, :create]
+      resources :comments, only: [:index, :create]
       resource :like, only: [:show, :create, :destroy]
     end
   end
