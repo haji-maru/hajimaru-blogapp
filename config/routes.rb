@@ -13,10 +13,6 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments, only: [:index, :new, :create]
 
-    # member do
-    #   post :like
-    # end
-
     resource :like, only: [:show, :create, :destroy]
   end
 
@@ -25,10 +21,6 @@ Rails.application.routes.draw do
     resources :unfollows, only: [:create]
   end
 
-  resource :profile, only: [:show, :edit, :update] do
-    collection do
-      post 'publish'
-    end
-  end
+  resource :profile, only: [:show, :edit, :update]
   resources :favorites, only: [:index]
 end
