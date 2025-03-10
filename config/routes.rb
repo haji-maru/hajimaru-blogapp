@@ -11,9 +11,6 @@ Rails.application.routes.draw do
   resource :timeline, only: [:show] # %i(show create) でも可能
 
   resources :articles do
-    resources :comments, only: [:index, :new, :create]
-
-    resource :like, only: [:show, :create, :destroy]
   end
 
   resources :accounts, only: [:show] do
@@ -23,4 +20,9 @@ Rails.application.routes.draw do
 
   resource :profile, only: [:show, :edit, :update]
   resources :favorites, only: [:index]
+
+  namespace :api do
+    resources :comments, only: [:index, :new, :create]
+    resource :like, only: [:show, :create, :destroy]
+  end
 end
