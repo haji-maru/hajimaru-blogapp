@@ -22,7 +22,9 @@ Rails.application.routes.draw do
   resources :favorites, only: [:index]
 
   namespace :api, default: {format: :json} do
-    resources :comments, only: [:index, :new, :create]
-    resource :like, only: [:show, :create, :destroy]
+    scope '/articles/:article_id' do
+      resources :comments, only: [:index, :new, :create]
+      resource :like, only: [:show, :create, :destroy]
+    end
   end
 end
