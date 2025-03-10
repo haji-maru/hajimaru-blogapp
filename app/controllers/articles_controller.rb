@@ -9,6 +9,10 @@ class ArticlesController < ApplicationController
     def show
     end
 
+    # member
+    # def like
+    # end
+
     def new
         @article = current_user.articles.build
     end
