@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Article, type: :model do
-  let!(:user) { create(:user) }
+  let!(:user) { create(:user, email: 'test@test.com') }
 
   context 'タイトルと内容が入力されている場合' do
     let!(:article) do
