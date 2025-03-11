@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Article, type: :model do
-  context 'タイトルと内容が入力されている場合' do
-    let!(:user) do
-      user = User.create!({
-        email: 'test@example.com',
-        password: 'password'
-      })
-    end
+  let!(:user) do
+    user = User.create!({
+      email: 'test@example.com',
+      password: 'password'
+    })
+  end
 
+  context 'タイトルと内容が入力されている場合' do
     let!(:article) do
       user.articles.build({
         title: Faker::Lorem.characters(number: 10),
