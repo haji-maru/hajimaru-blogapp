@@ -10,5 +10,7 @@ RSpec.describe Article, type: :model do
       title: Faker::lorem.characters(number: 10),
       content: Faker::lorem.characters(number: 300)
     })
+
+    expect(article).to ve_valid
   end
 end
