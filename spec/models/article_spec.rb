@@ -12,11 +12,10 @@ RSpec.describe Article, type: :model do
   end
 
   context 'タイトルの文字が一文字の場合' do
-    let!(:article) do
-      user.articles.create({
-        title: Faker::Lorem.characters(number: 1),
-        content: Faker::Lorem.characters(number: 300)
-      })
+    let!(:article) { build(:article, title: Faker::Lorem.characters(number: 1), user: user) }
+
+    before do
+      article.save
     end
 
     it '記事を保存できない' do
