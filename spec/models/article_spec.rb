@@ -17,7 +17,7 @@ RSpec.describe Article, type: :model do
     end
 
     it '記事を保存できる' do
-      expect(@article).to be_valid
+      expect(article).to be_valid
     end
   end
 end
