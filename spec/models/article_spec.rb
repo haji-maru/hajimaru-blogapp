@@ -7,10 +7,10 @@ RSpec.describe Article, type: :model do
       password: 'password'
     })
     article = user.articles.build({
-      title: Faker::lorem.characters(number: 10),
-      content: Faker::lorem.characters(number: 300)
+      title: Faker::Lorem.characters(number: 10),
+      content: Faker::Lorem.characters(number: 300)
     })
 
-    expect(article).to ve_valid
+    expect(article).to be_valid
   end
 end
