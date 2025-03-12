@@ -17,7 +17,7 @@ RSpec.describe 'Articles', type: :request do
       post articles_path({ article: article_params })
       expect(response).to have_http_status(302)
       expect(Article.last.title).to eq(article_params[:title])
-      expect(Article.last.content).to eq(article_params[:content])
+      expect(Article.last.content.body.to_plain_text).to eq(article_params[:content])
     end
   end
 end
