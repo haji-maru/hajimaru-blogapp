@@ -10,4 +10,12 @@ RSpec.describe 'Articles', type: :request do
       expect(response).to have_http_status(200)
     end
   end
+
+  describe 'POST /articles' do
+    it '記事が保存される' do
+      article_params = attributes_for(:article)
+      post articles_path({ article: article_params })
+      expect(response).to have_http_status(302)
+    end
+  end
 end
