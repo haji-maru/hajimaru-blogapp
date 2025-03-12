@@ -7,7 +7,7 @@ RSpec.describe 'Api::Comments', type: :request do
     let!(:comments) { create_list(:comment, 3, article: article) }
 
     it '200ステータス' do
-      get api_comments_path
+      get api_comments_path(article_id: article.id)
       expect(response).to have_http_status(200)
     end
   end
