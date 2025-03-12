@@ -12,12 +12,18 @@ RSpec.describe 'Articles', type: :request do
   end
 
   describe 'POST /articles' do
-    it '記事が保存される' do
-      article_params = attributes_for(:article)
-      post articles_path({ article: article_params })
-      expect(response).to have_http_status(302)
-      expect(Article.last.title).to eq(article_params[:title])
-      expect(Article.last.content.body.to_plain_text).to eq(article_params[:content])
+    context 'ログインしている場合' do
+      before do
+        sign_in user
+      end
+
+      it '記事が保存される' do
+        article_params = attributes_for(:article)
+        post articles_path({ article: article_params })
+        expect(response).to have_http_status(302)
+        expect(Article.last.title).to eq(article_params[:title])
+        expect(Article.last.content.body.to_plain_text).to eq(article_params[:content])
+      end
     end
   end
 end
