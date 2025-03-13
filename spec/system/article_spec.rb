@@ -7,6 +7,8 @@ RSpec.describe 'Article', type: :system do
   it '記事一覧が表示される' do
     visit root_path
 
-    expect(page).to have_content(articles.first.title)
+    articles.each do |article|
+      expect(page).to have_content(article.title)
+    end
   end
 end
