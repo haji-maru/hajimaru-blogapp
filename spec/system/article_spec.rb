@@ -6,5 +6,7 @@ RSpec.describe 'Article', type: :system do
 
   it '記事一覧が表示される' do
     visit root_path
+
+    expect(page).to have_content(article.first.title)
   end
 end
