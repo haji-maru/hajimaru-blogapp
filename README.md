@@ -17,6 +17,7 @@
 - faker
 - hamlit
 - sidekiq
+- erb2haml
 - letter_opener
 - pry-byebug
 - rubocop-rails
