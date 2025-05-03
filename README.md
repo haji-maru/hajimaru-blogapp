@@ -5,3 +5,16 @@
 # フロントエンド
 ・JavaScript
 ・Sass
+# DB
+・PostgreSQL
+# 使用ツール
+・annotate
+・active_model_serializers
+・active_decorator
+・better_errors
+・binding_of_caller
+・devise
+・faker
+・hamlit
+・sidekiq
+・letter_opener
